@@ -6,10 +6,22 @@ export default function Nav({ children }) {
         <div className={navStyles.nav}>
             <ul>
                 <li>
-                    <Link href="/"> Home </Link>
+                    <Link href="/"> Главная страница </Link>
                 </li>
                 <li>
-                    <Link href="/about"> About </Link>
+                    <Link href="/prices"> Цены</Link>
+                </li>
+                <li>
+                    <Link href="/contacts"> Контакты</Link>
+                </li>
+                <li>
+                    <Link href="/questions"> Часто задаваемые вопросы </Link>
+                </li>
+                <li>
+                    <Link href="/feedbacks"> Отзывы </Link>
+                </li>
+                <li>
+                    <Link href="/about"> О нас </Link>
                 </li>
             </ul>
 
