@@ -1,30 +1,46 @@
 import Link from "next/link"
-import navStyles from "../styles/Nav.module.css"
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    Box
+} from "@chakra-ui/react"
 
 export default function Nav() {
     return (
-        <div className={navStyles.nav}>
-            <ul className={navStyles.ul}>
-                <li className={navStyles.li}>
-                    <Link href="/"> Главная страница </Link>
-                </li>
-                <li className={navStyles.li}>
-                    <Link href="/prices"> Цены</Link>
-                </li>
-                <li className={navStyles.li}>
-                    <Link href="/contacts"> Контакты</Link>
-                </li>
-                <li className={navStyles.li}>
-                    <Link href="/questions"> Часто задаваемые вопросы </Link>
-                </li>
-                <li className={navStyles.li}>
-                    <Link href="/feedbacks"> Отзывы </Link>
-                </li>
-                <li className={navStyles.li}>
-                    <Link href="/about"> О нас </Link>
-                </li>
-            </ul>
+        <div >
+            <Box color="gray.500"
+                bg="black"
+                fontWeight="semibold"
+                letterSpacing="wide"
+                height="28px"
+            >
+                <Breadcrumb spacing="8px" separator="<">
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/">Главная страница</BreadcrumbLink>
+                    </BreadcrumbItem>
 
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/prices">Цены</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/contacts">Контакты</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/questions">Часто задаваемые вопросы</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/feedbacks">Отзывы</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/about">О нас</BreadcrumbLink>
+                    </BreadcrumbItem>
+                </Breadcrumb>
+            </Box>
         </div >
     )
 }

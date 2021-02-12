@@ -1,11 +1,16 @@
 import Layout from "../components/Layout"
-import '../styles/globals.css'
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+
+const theme = extendTheme({
+})
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ChakraProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ChakraProvider>
   )
 }
 
