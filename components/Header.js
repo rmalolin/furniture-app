@@ -1,19 +1,7 @@
 import React from "react";
-import { Link, Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Logo from "./Logo";
-
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
-    return (
-        <Text
-            mb={{ base: isLast ? 0 : 8, sm: 0 }}
-            mr={{ base: 0, sm: isLast ? 0 : 8 }}
-            display="block"
-            {...rest}
-        >
-            <Link to={to}>{children}</Link>
-        </Text>
-    );
-};
+import MenuItem from "./MenuItem"
 
 const CloseIcon = () => (
     <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -75,11 +63,13 @@ const Header = (props) => {
                     direction={["column", "row", "row", "row"]}
                     pt={[4, 4, 0, 0]}
                 >
-                    <MenuItem to="/">Home</MenuItem>
-                    <MenuItem to="/how">How It works </MenuItem>
-                    <MenuItem to="/faetures">Features </MenuItem>
-                    <MenuItem to="/pricing">Pricing </MenuItem>
-                    <MenuItem to="/signup" isLast>
+                    <MenuItem to="/">Главная страница</MenuItem>
+                    <MenuItem to="/prices">Цены</MenuItem>
+                    <MenuItem to="/contacts">Контакты </MenuItem>
+                    <MenuItem to="/feedbacks">Отзывы </MenuItem>
+                    <MenuItem to="/questions">Часто задаваемые вопросы </MenuItem>
+                    <MenuItem to="/about">О нас </MenuItem>
+                    {/* <MenuItem to="/signup" isLast>
                         <Button
                             size="sm"
                             rounded="md"
@@ -91,7 +81,7 @@ const Header = (props) => {
                         >
                             Create Account
             </Button>
-                    </MenuItem>
+                    </MenuItem> */}
                 </Flex>
             </Box>
         </Flex>
