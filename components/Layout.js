@@ -1,5 +1,4 @@
 import Header from "./Header"
-import Footer from "./Footer"
 import { Flex } from "@chakra-ui/react"
 
 export default function Layout(props) {
@@ -18,7 +17,6 @@ export default function Layout(props) {
         >
             <Header />
             {props.children}
-            <Footer />
         </Flex>
     )
 }

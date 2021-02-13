@@ -1,8 +1,6 @@
 import Layout from "../components/Layout"
 import { ChakraProvider } from "@chakra-ui/react"
-import customTheme from "../components/theme"
-
-
+import customTheme from "../styles/theme"
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,12 +1,14 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Link } from "@chakra-ui/react";
 
 export default function Logo(props) {
     return (
         <Box {...props}>
-            <Text fontSize="lg" fontWeight="bold">
-                Logo
+            <Link href="/">
+                <Text fontSize="lg" fontWeight="bold">
+                    Serg & Co
       </Text>
+            </Link>
         </Box>
     );
 }

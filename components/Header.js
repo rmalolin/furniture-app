@@ -38,14 +38,14 @@ const Header = (props) => {
             w="100%"
             mb={8}
             p={8}
-            bg={["primary.500", "primary.500", "transparent", "transparent"]}
+            bg={["primary.700", "primary.700", "transparent", "transparent"]}
             color={["white", "white", "primary.700", "primary.700"]}
             {...props}
         >
             <Flex align="center">
                 <Logo
                     w="100px"
-                    color={["white", "white", "primary.500", "primary.500"]}
+                    color={["white", "white", "primary.800", "primary.800"]}
                 />
             </Flex>
 
@@ -69,19 +69,6 @@ const Header = (props) => {
                     <MenuItem to="/feedbacks">Отзывы </MenuItem>
                     <MenuItem to="/questions">Часто задаваемые вопросы </MenuItem>
                     <MenuItem to="/about">О нас </MenuItem>
-                    {/* <MenuItem to="/signup" isLast>
-                        <Button
-                            size="sm"
-                            rounded="md"
-                            color={["primary.500", "primary.500", "white", "white"]}
-                            bg={["white", "white", "primary.500", "primary.500"]}
-                            _hover={{
-                                bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
-                            }}
-                        >
-                            Create Account
-            </Button>
-                    </MenuItem> */}
                 </Flex>
             </Box>
         </Flex>
