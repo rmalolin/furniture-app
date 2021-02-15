@@ -3,6 +3,33 @@ import { Box, Flex } from "@chakra-ui/react";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem"
 
+const routes = [
+    {
+        path: "/",
+        title: "Главная страница"
+    },
+    {
+        path: "/prices",
+        title: "Цены"
+    },
+    {
+        path: "/contacts",
+        title: "Контакты"
+    },
+    {
+        path: "/feedback",
+        title: "Отзывы"
+    },
+    {
+        path: "/questions",
+        title: "Вопросы"
+    },
+    {
+        path: "/about",
+        title: "О нас"
+    }
+]
+
 const CloseIcon = () => (
     <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
         <title>Close</title>
@@ -63,12 +90,7 @@ const Header = (props) => {
                     direction={["column", "row", "row", "row"]}
                     pt={[4, 4, 0, 0]}
                 >
-                    <MenuItem to="/">Главная страница</MenuItem>
-                    <MenuItem to="/prices">Цены</MenuItem>
-                    <MenuItem to="/contacts">Контакты </MenuItem>
-                    <MenuItem to="/feedbacks">Отзывы </MenuItem>
-                    <MenuItem to="/questions">Часто задаваемые вопросы </MenuItem>
-                    <MenuItem to="/about">О нас </MenuItem>
+                    {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="xl">{item.title}</MenuItem>)}
                 </Flex>
             </Box>
         </Flex>
@@ -76,3 +98,6 @@ const Header = (props) => {
 };
 
 export default Header;
+
+
+
