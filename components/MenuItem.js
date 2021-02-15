@@ -1,4 +1,5 @@
 import { Link, Text } from "@chakra-ui/react"
+import NextLink from 'next/link'
 
 const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     return (
@@ -9,7 +10,11 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
             display="block"
             {...rest}
         >
-            <Link href={to}>{children}</Link>
+            <Link>
+                <NextLink href={to}>
+                    {children}
+                </NextLink>
+            </Link>
         </Text>
     );
 };
