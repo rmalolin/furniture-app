@@ -5,7 +5,7 @@ import NextLink from 'next/link'
 export default function Logo(props) {
     return (
         <Box {...props}>
-            <Link >
+            <Link>
                 <NextLink href="/">
                     <Text fontSize="lg" fontWeight="bold">
                         Serg & Co
