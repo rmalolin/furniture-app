@@ -7,7 +7,9 @@ export default function Logo(props) {
         <Box {...props}>
             <Link>
                 <NextLink href="/">
-                    <Text fontSize="lg" fontWeight="bold">
+                    <Text
+                        fontSize="xl"
+                        fontWeight="bold">
                         Serg & Co
                     </Text>
                 </NextLink>

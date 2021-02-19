@@ -53,9 +53,15 @@ export default function Home() {
           Реальная сборка
           </Text>
       </Stack>
-      <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
+      <Box
+        w={{ base: "80%", sm: "60%", md: "50%" }}
+        mb={{ base: 12, md: 0 }}>
         {/* TODO: Make this change every X secs */}
-        <Image src="https://www.publy.ru/wp-content/uploads/2019/10/post_5db475c23aa7d.jpeg" size="100%" rounded="1rem" shadow="2xl" />
+        <Image
+          src="images/1.jpeg"
+          size="100%"
+          rounded="1rem"
+          shadow="2xl" />
       </Box>
     </Flex>
   )

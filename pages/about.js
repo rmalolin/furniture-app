@@ -1,6 +1,5 @@
 import Meta from "../components/Meta"
-import Image from "next/image"
-import { Flex, Heading, Text, Stack, Box, Wrap, WrapItem } from "@chakra-ui/react";
+import { Flex, Heading, Text, Stack, Box, Image } from "@chakra-ui/react";
 
 export default function about() {
     return (
@@ -43,25 +42,16 @@ export default function about() {
                     Реально существующая фирма Сержа. Факт.
                     </Text>
             </Stack>
-            <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
-                <Wrap >
-                    <WrapItem
-                        boxShadow="base"
-                        rounded="20px"
-                        overflow="hidden"
-                        bg="white"
-                        lineHeight="0"
-                        _hover={{ boxShadow: "dark-lg" }}
-                    >
-                        <Image
-                            src="/images/1.jpeg"
-                            alt="Picture of the Ivan the Mighty"
-                            width={500}
-                            height={500}
-                        />
-                    </WrapItem>
-                </Wrap>
+            <Box
+                w={{ base: "80%", sm: "60%", md: "50%" }}
+                mb={{ base: 12, md: 0 }}>
+                <Image
+                    src="images/2.jpg"
+                    size="100%"
+                    rounded="1rem"
+                    shadow="2xl" />
             </Box>
+
         </Flex>
     )
 }

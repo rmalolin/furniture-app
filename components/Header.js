@@ -21,8 +21,8 @@ const routes = [
         title: "Отзывы"
     },
     {
-        path: "/questions",
-        title: "Вопросы"
+        path: "/faq",
+        title: "FAQ"
     },
     {
         path: "/about",
@@ -69,17 +69,19 @@ const Header = (props) => {
             color={["white", "white", "primary.700", "primary.700"]}
             {...props}
         >
-            <Flex align="center">
+            <Flex
+                align="center"
+            >
                 <Logo
                     w="100px"
                     color={["white", "white", "primary.800", "primary.800"]}
                 />
             </Flex>
-
-            <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
+            <Box
+                display={{ base: "block", md: "none" }}
+                onClick={toggleMenu}>
                 {show ? <CloseIcon /> : <MenuIcon />}
             </Box>
-
             <Box
                 display={{ base: show ? "block" : "none", md: "block" }}
                 flexBasis={{ base: "100%", md: "auto" }}
@@ -90,7 +92,7 @@ const Header = (props) => {
                     direction={["column", "row", "row", "row"]}
                     pt={[4, 4, 0, 0]}
                 >
-                    {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="xl">{item.title}</MenuItem>)}
+                    {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl">{item.title}</MenuItem>)}
                 </Flex>
             </Box>
         </Flex>
