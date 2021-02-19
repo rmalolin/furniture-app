@@ -1,5 +1,5 @@
 import Meta from "../components/Meta"
-import { Flex, Heading, Text, Stack, Box, Image } from "@chakra-ui/react";
+import { Flex, Heading, Text, Stack, Box, Image } from "@chakra-ui/react"
 
 export default function about() {
     return (
