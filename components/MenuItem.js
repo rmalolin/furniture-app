@@ -6,6 +6,7 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
         <Link>
             <NextLink href={to}>
                 <Text
+                    fontFamily="sans-serif"
                     fontWeight="semibold"
                     mb={
                         {

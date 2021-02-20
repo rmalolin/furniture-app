@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, IconButton, CloseButton } from "@chakra-ui/react";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem"
+
 
 const routes = [
     {
@@ -80,7 +81,23 @@ const Header = (props) => {
             <Box
                 display={{ base: "block", md: "none" }}
                 onClick={toggleMenu}>
-                {show ? <CloseIcon /> : <MenuIcon />}
+                {
+                    show ?
+                        <CloseButton
+                            size="lg"
+                        >
+                            <CloseIcon />
+                        </CloseButton>
+                        :
+                        <IconButton
+                            colorScheme="primary"
+                            bgColor="primary.700"
+                            aria-label="Menu"
+                            size="lg"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                }
             </Box>
             <Box
                 display={{ base: show ? "block" : "none", md: "block" }}
