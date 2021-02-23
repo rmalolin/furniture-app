@@ -5,7 +5,7 @@ import Meta from "../components/Meta"
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider resetCSS theme={customTheme}>
+    <ChakraProvider theme={customTheme} resetCSS>
       <Meta
         title="Сборка мебели"
         keywords="Сборка мебели, мебель, Верея, Обнинск"

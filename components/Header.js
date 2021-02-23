@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Flex, IconButton, CloseButton } from "@chakra-ui/react";
+import { Box, Flex, IconButton } from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import Logo from "./Logo";
 import MenuItem from "./MenuItem"
 
@@ -31,7 +32,7 @@ const routes = [
     }
 ]
 
-const CloseIcon = () => (
+const CloseIconKek = () => (
     <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
         <title>Close</title>
         <path
@@ -66,8 +67,8 @@ const Header = (props) => {
             w="100%"
             mb={8}
             p={8}
-            bg={["primary.700", "primary.700", "transparent", "transparent"]}
-            color={["white", "white", "primary.700", "primary.700"]}
+            bg={["teal.700", "teal.700", "transparent", "transparent"]}
+            color={["white", "white", "teal.700", "teal.700"]}
             {...props}
         >
             <Flex
@@ -80,23 +81,25 @@ const Header = (props) => {
             </Flex>
             <Box
                 display={{ base: "block", md: "none" }}
-                onClick={toggleMenu}>
+                onClick={toggleMenu}
+            >
                 {
                     show ?
-                        <CloseButton
+                        <IconButton
+                            icon={<CloseIcon />}
+                            colorScheme="teal"
+                            bgColor="teal.700"
                             size="lg"
-                        >
-                            <CloseIcon />
-                        </CloseButton>
+                            aria-label="Close menu"
+                        />
                         :
                         <IconButton
-                            colorScheme="primary"
-                            bgColor="primary.700"
-                            aria-label="Menu"
+                            icon={<HamburgerIcon />}
+                            colorScheme="teal"
+                            bgColor="teal.700"
                             size="lg"
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                            aria-label="Menu"
+                        />
                 }
             </Box>
             <Box
