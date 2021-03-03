@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, IconButton, Collapse } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Collapse, useDisclosure } from "@chakra-ui/react";
 import { VscChromeClose } from 'react-icons/vsc'
 import { SiHackhands } from "react-icons/si";
 import Logo from "./Logo";
@@ -35,9 +35,7 @@ const routes = [
 ]
 
 const Header = (props) => {
-    const [showMenu, setShowMenu] = React.useState(false);
-
-    const toggleMenu = () => setShowMenu(!showMenu);
+    const { isOpen, onClose, onToggle } = useDisclosure()
 
     return (
         <Flex
@@ -59,10 +57,10 @@ const Header = (props) => {
                 />
             </Flex>
             <Box
-                display={{ base: "block", sm: "block" }}
-                onClick={toggleMenu}>
+                display={{ base: "block", sm: "block", md: "none", lg: "none" }}
+                onClick={onToggle}>
                 {
-                    showMenu
+                    isOpen
                         ?
                         <IconButton
                             icon={<VscChromeClose />}
@@ -81,24 +79,27 @@ const Header = (props) => {
                         />
                 }
             </Box>
-            <Collapse in={showMenu} animateOpacity >
-                <Box
-                    display={{ base: "block", sm: "block" }}
-                    flexBasis={{ base: "100%", sm: "100%" }}
-                >
+
+            <Box
+                display={{ base: "block", sm: "block", md: "none" }}
+                flexBasis={{ base: "100%", sm: "100%" }}
+            >
+                <Collapse in={isOpen} animateOpacity>
                     <Flex
                         align={{ base: "center", sm: "center" }}
                         justify={{ base: "center", sm: "center" }}
                         direction={{ base: "column", sm: "column" }}
                         pt={{ base: 4, sm: 4 }}
+
                     >
-                        {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl">{item.title}</MenuItem>)}
+                        {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl" onClick={onClose}>{item.title}</MenuItem>)}
                     </Flex>
-                </Box>
-            </Collapse>
-            {/* <Box
-                display={{ base: showMenu ? "block" : "none", md: "block" }}
-                flexBasis={{ base: "100%", md: "auto" }}
+                </Collapse>
+            </Box>
+
+            <Box
+                display={{ base: "none", sm: "none", md: "block", lg: "block" }}
+                flexBasis={{ md: "auto", lg: "auto" }}
             >
 
                 <Flex
@@ -112,7 +113,7 @@ const Header = (props) => {
 
                 </Flex>
 
-            </Box> */}
+            </Box>
 
         </Flex>
     );

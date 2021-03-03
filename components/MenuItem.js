@@ -1,9 +1,9 @@
 import { Link, Text } from "@chakra-ui/react"
 import NextLink from 'next/link'
 
-const MenuItem = ({ children, to = "/", ...rest }) => {
+const MenuItem = ({ children, to = "/", onClick, ...rest }) => {
     return (
-        <Link>
+        <Link onClick={onClick}>
             <NextLink href={to}>
                 <Text
                     fontFamily="sans-serif"
