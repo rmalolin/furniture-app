@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Flex, IconButton } from "@chakra-ui/react";
-import { CloseIcon } from '@chakra-ui/icons'
-import { TiThMenu } from "react-icons/ti";
+import { Box, Flex, IconButton, Collapse } from "@chakra-ui/react";
+import { VscChromeClose } from 'react-icons/vsc'
+import { SiHackhands } from "react-icons/si";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem"
+
 
 
 const routes = [
@@ -34,8 +35,9 @@ const routes = [
 ]
 
 const Header = (props) => {
-    const [show, setShow] = React.useState(false);
-    const toggleMenu = () => setShow(!show);
+    const [showMenu, setShowMenu] = React.useState(false);
+
+    const toggleMenu = () => setShowMenu(!showMenu);
 
     return (
         <Flex
@@ -50,22 +52,20 @@ const Header = (props) => {
             color={["white", "white", "teal.700", "teal.700"]}
             {...props}
         >
-            <Flex
-                align="center"
-            >
+            <Flex align="center">
                 <Logo
                     w="100px"
                     color={["white", "white", "teal.800", "teal.800"]}
                 />
             </Flex>
             <Box
-                display={{ base: "block", md: "none" }}
-                onClick={toggleMenu}
-            >
+                display={{ base: "block", sm: "block" }}
+                onClick={toggleMenu}>
                 {
-                    show ?
+                    showMenu
+                        ?
                         <IconButton
-                            icon={<CloseIcon />}
+                            icon={<VscChromeClose />}
                             colorScheme="teal"
                             bgColor="teal.700"
                             size="lg"
@@ -73,7 +73,7 @@ const Header = (props) => {
                         />
                         :
                         <IconButton
-                            icon={<TiThMenu />}
+                            icon={<SiHackhands />}
                             colorScheme="teal"
                             bgColor="teal.700"
                             size="lg"
@@ -81,19 +81,39 @@ const Header = (props) => {
                         />
                 }
             </Box>
-            <Box
-                display={{ base: show ? "block" : "none", md: "block" }}
+            <Collapse in={showMenu} animateOpacity >
+                <Box
+                    display={{ base: "block", sm: "block" }}
+                    flexBasis={{ base: "100%", sm: "100%" }}
+                >
+                    <Flex
+                        align={{ base: "center", sm: "center" }}
+                        justify={{ base: "center", sm: "center" }}
+                        direction={{ base: "column", sm: "column" }}
+                        pt={{ base: 4, sm: 4 }}
+                    >
+                        {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl">{item.title}</MenuItem>)}
+                    </Flex>
+                </Box>
+            </Collapse>
+            {/* <Box
+                display={{ base: showMenu ? "block" : "none", md: "block" }}
                 flexBasis={{ base: "100%", md: "auto" }}
             >
+
                 <Flex
-                    align="center"
+                    align={["center", "flex-end", "center", "center"]}
                     justify={["center", "space-between", "flex-end", "flex-end"]}
-                    direction={["column", "row", "row", "row"]}
+                    direction={["column", "column", "row", "row"]}
                     pt={[4, 4, 0, 0]}
                 >
+
                     {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl">{item.title}</MenuItem>)}
+
                 </Flex>
-            </Box>
+
+            </Box> */}
+
         </Flex>
     );
 };
