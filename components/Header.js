@@ -79,7 +79,6 @@ const Header = (props) => {
                         />
                 }
             </Box>
-
             <Box
                 display={{ base: "block", sm: "block", md: "none" }}
                 flexBasis={{ base: "100%", sm: "100%" }}
@@ -90,31 +89,24 @@ const Header = (props) => {
                         justify={{ base: "center", sm: "center" }}
                         direction={{ base: "column", sm: "column" }}
                         pt={{ base: 4, sm: 4 }}
-
                     >
                         {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl" onClick={onClose}>{item.title}</MenuItem>)}
                     </Flex>
                 </Collapse>
             </Box>
-
             <Box
                 display={{ base: "none", sm: "none", md: "block", lg: "block" }}
                 flexBasis={{ md: "auto", lg: "auto" }}
             >
-
                 <Flex
-                    align={["center", "flex-end", "center", "center"]}
-                    justify={["center", "space-between", "flex-end", "flex-end"]}
-                    direction={["column", "column", "row", "row"]}
-                    pt={[4, 4, 0, 0]}
+                    align={{ md: "center", lg: "center" }}
+                    justify={{ md: "flex-end", lg: "flex-end" }}
+                    direction={{ md: "row", lg: "row" }}
+                    pt={{ md: 0, lg: 0 }}
                 >
-
                     {routes.map((item) => <MenuItem key={item.path} to={item.path} fontSize="2xl">{item.title}</MenuItem>)}
-
                 </Flex>
-
             </Box>
-
         </Flex>
     );
 };
