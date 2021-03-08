@@ -8,9 +8,10 @@ export default function Logo(props) {
             <Link>
                 <NextLink href="/">
                     <Text
+                        fontFamily="cursive"
                         fontSize="xl"
                         fontWeight="bold">
-                        Serg & Co
+                        Logo
                     </Text>
                 </NextLink>
             </Link>

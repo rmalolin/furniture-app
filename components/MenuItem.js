@@ -6,7 +6,7 @@ const MenuItem = ({ children, to = "/", onClick, ...rest }) => {
         <Link onClick={onClick}>
             <NextLink href={to}>
                 <Text
-                    fontFamily="sans-serif"
+                    fontFamily="cursive"
                     fontWeight="semibold"
                     mb={
                         {

@@ -85,8 +85,8 @@ const Header = (props) => {
             >
                 <Collapse in={isOpen} animateOpacity>
                     <Flex
-                        align={{ base: "center", sm: "center" }}
-                        justify={{ base: "center", sm: "center" }}
+                        align={{ base: "flex-end", sm: "flex-end" }}
+                        justify={{ base: "flex-end", sm: "flex-end" }}
                         direction={{ base: "column", sm: "column" }}
                         pt={{ base: 4, sm: 4 }}
                     >
